@@ -39,9 +39,9 @@ async function main() {
     }
 
     // put in csv file
-    let csv = "UID,SUMMARY,START,END,SALLES\n";
+    let csv = "UID;SUMMARY;START;END;SALLES\n";
     for (const event of allEvents) {
-        csv += `${event.uid},${event.summary.split(",").join(" ")},${event.start},${event.end},${event.salles.split(",").join(" ")}\n`;
+        csv += `${event.uid};${event.summary};${event.start};${event.end};${event.salles}\n`;
     }
     fs.writeFileSync("events.csv", csv);
 }
